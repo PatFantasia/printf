@@ -7,13 +7,10 @@
  *
  * Return: bytes printed
  */
-
 int print_hex(va_list ap, params_t *params)
 {
 	unsigned long l;
-
 	int c = 0;
-
 	char *str;
 
 	if (params->l_modifier)
@@ -33,7 +30,6 @@ int print_hex(va_list ap, params_t *params)
 	return (c += print_number(str, params));
 }
 
-
 /**
  * print_HEX - prints unsigned hex numbers in uppercase
  * @ap: the argument pointer
@@ -41,13 +37,10 @@ int print_hex(va_list ap, params_t *params)
  *
  * Return: bytes printed
  */
-
 int print_HEX(va_list ap, params_t *params)
 {
 	unsigned long l;
-
 	int c = 0;
-
 	char *str;
 
 	if (params->l_modifier)
@@ -66,7 +59,6 @@ int print_HEX(va_list ap, params_t *params)
 	params->unsign = 1;
 	return (c += print_number(str, params));
 }
-
 /**
  * print_binary - prints unsigned binary number
  * @ap: the argument pointer
@@ -74,13 +66,10 @@ int print_HEX(va_list ap, params_t *params)
  *
  * Return: bytes printed
  */
-
 int print_binary(va_list ap, params_t *params)
 {
 	unsigned int n = va_arg(ap, unsigned int);
-
 	char *str = convert(n, 2, CONVERT_UNSIGNED, params);
-
 	int c = 0;
 
 	if (params->hashtag_flag && n)
@@ -89,7 +78,6 @@ int print_binary(va_list ap, params_t *params)
 	return (c += print_number(str, params));
 }
 
-
 /**
  * print_octal - prints unsigned octal numbers
  * @ap: the argument pointer
@@ -97,7 +85,6 @@ int print_binary(va_list ap, params_t *params)
  *
  * Return: bytes printed
  */
-
 int print_octal(va_list ap, params_t *params)
 {
 	unsigned long l;
@@ -117,3 +104,4 @@ int print_octal(va_list ap, params_t *params)
 	params->unsign = 1;
 	return (c += print_number(str, params));
 }
+
